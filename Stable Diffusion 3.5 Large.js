@@ -1,4 +1,4 @@
-const stablediffusionlargeApiKey = "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";
+const stablediffusionlargeApiKey = "Hugging_Face_API_KEY";
 const stablediffusionlargeModelUrl = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large";
 
 async function queryStableDiffusionLarge(data) {
