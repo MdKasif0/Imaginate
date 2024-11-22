@@ -1,4 +1,4 @@
-const counterfeitApiKey = "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";
+const counterfeitApiKey = "Hugging_Face_API_KEY";
 const counterfeitModelUrl = "https://api-inference.huggingface.co/models/gsdf/Counterfeit-V2.5";
 
 async function queryCounterfeit(data) {
