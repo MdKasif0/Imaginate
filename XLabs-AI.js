@@ -1,4 +1,4 @@
-const xlabsApiKey = "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";
+const xlabsApiKey = "Hugging_Face_API_KEY";
 const xlabsModelUrl = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev";
 
 async function queryXLabs(data) {
