@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Imaginate</h1>
+        <select id="model-dropdown">
+            <option value="stable_diffusion_xl_base_1.0">Stable Diffusion</option>
+            <option value="stable_diffusion_3.5_large">Stable Diffusion 3.5 Large</option>
+            <option value="FLUX.1_schnell">Black Forest Labs</option>
+            <option value="FLUX.1_dev">XLabs-AI</option>
+            <option value="Counterfeit_V2.5">Counterfeit-V2.5</option>
+        </select>
+    </header>
+    <div class="container">
+        <div id="chat-container">
+            </div>
+        <div id="loading" class="loading">
+            Generating image...
+            <video id="preloader-video" src="preloader.mp4" autoplay loop muted></video>
+        </div>
+    </div>
+    
+    <footer>
+       <div class="input-group">
+          <input type="text" id="prompt-input" placeholder="Enter your prompt here" />
+          <div class="circle">
+            <i id="generate-button" class="fa-solid fa-arrow-up"></i>
+          </div>
+        </div>
+    </footer>
+
+    <div id="empty-prompt-modal" class="modal">
+        <div class="modal-content">
+            <p>Please enter a prompt to generate an image.</p>
+            <button id="close-modal">Close</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="Stable Diffusion.js"></script>
+    <script src="Stable Diffusion 3.5 Large.js"></script>
+    <script src="Black Forest Labs.js"></script>
+    <script src="XLabs-AI.js"></script>
+    <script src="Counterfeit-V2.5.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik+Wet+Paint&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif, Arial, sans-serif;
+    background-color: #0E0E0E;
+    color: ghostwhite;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4vw 3vw 4vw 4vw;
+    margin-bottom: 8vw;
+    background-color: black;
+}
+
+h1 {
+    font-size: 8vw;
+    color: darkorange;
+    padding-left: 2vw;
+    font-family: "Rubik Wet Paint", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.container {
+    width: 100%;
+    background-color: #0E0E0E;
+    min-height: 74vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    padding-bottom: 9vh;
+}
+
+.loading {
+    display: none;
+    font-size: 4.5vw;
+    color: ghostwhite;
+    margin-top: 8vw;
+    text-align: left;
+    padding-left: 6vw;
+}
+
+#preloader-video {
+    display: none;
+    max-height: 70%;
+    max-width: 70%;
+    margin-top: 2vw;
+    border-radius: 5vw;
+}
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 2vw;
+}
+
+.message {
+    text-align: center;
+    color: darkorange;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 4vw;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.user-input {
+    align-self: flex-end;
+    background-color: #1D1D1D;
+    color: white;
+    padding: 3vw 5vw;
+    border-radius: 15px 15px 0 15px;
+    max-width: 80%;
+    margin: 5px;
+    word-wrap: break-word;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ai-response {
+    display: flex;
+    align-items: center;
+    max-width: 70%;
+    margin: 3vw;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+}
+
+#chat-container img {
+    max-width: 100%;
+    border-radius: 2vw;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logo-icon {
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    width: 8vw;
+    height: 8vw;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 5;
+  width: 95%;
+  z-index: 10;
+  height: 7.9vh;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    padding: 3vw 0vw;
+    background-color: #0E0E0E;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 3vw 4vw;
+    background-color: #1D1D1D;
+    color: floralwhite;
+    border: none;
+    border-radius: 5vw;
+    margin-right: 3vw;
+    font-size: 4.5vw;
+    width: 78vw;
+}
+
+.circle {
+    height: 9vw;
+    width: 9vw;
+    border: 0.5vw solid darkorange;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-solid {
+    color: darkorange;
+    border: none;
+    font-size: 6vw;
+    cursor: pointer;
+}
+
+#model-dropdown {
+    background-color: #1D1D1D;
+    color: ghostwhite;
+    border: none;
+    padding: 1vw 2vw;
+    font-size: 4vw;
+    margin-left: 2vw;
+    border-radius: 0.5vw;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16"><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.658l-4.796 5.482a1 1 0 0 1-1.506 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+
+#model-dropdown {
+  background-color: #1D1D1D;
+  color: ghostwhite;
+  border: none;
+  padding: 1vw 2vw;
+  font-size: 3vw;
+  margin-left: 2vw;
+  border-radius: 1vw;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #00000094;
+}
+
+.modal-content {
+  top: 30vh;
+  background-color: black;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid darkorange;
+  height: 20%;
+  width: 80%;
+  text-align: center;
+  border-radius: 4vw;
+  position: relative;
+}
+
+.modal-content p {
+  margin-bottom: 10vw;
+}
+
+.modal-content button {
+    background-color: black;
+    padding: 2vw;
+    border: 0.5vw solid darkorange;
+    cursor: pointer;
+    border-radius: 2vw;
+    color: darkorange;
+    font-size: 4vw;
+}
+
+.modal-content button:hover {
+    background-color: darkorange;
+    color: black
+}
